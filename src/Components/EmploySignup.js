@@ -12,6 +12,7 @@ const EmploySignup  = () => {
     const [noOfYears, setYear] = useState(0);
     const [contactNumber, setnumber] = useState();
     const [workType, setType] = useState("");
+    const [otherWorkType, setotherWorkType] = useState("");
     const navigate=useNavigate();
     let handleMouse=(id)=>{
         const element=document.getElementById(id);
@@ -25,7 +26,7 @@ const EmploySignup  = () => {
     }
 
     let    collectData = async () => {
-                const arr={name, email,contactNumber,workType,workStatus,noOfYears,password}
+                const arr={name, email,contactNumber,workType,otherWorkType,workStatus,noOfYears,password}
         
 
                 let result = await fetch('http://localhost:5000/register', {
@@ -40,10 +41,14 @@ const EmploySignup  = () => {
                 if(result.result1==='UserValid'){
                     navigate('/home')
                     sessionStorage.setItem('users',JSON.stringify(result.result));
-                   window.location.reload();
+                    window.location.reload();
                    
                 
                 }
+                else if(result.result1==='fieldError'){
+                    alert("Kindly fill all required detail")
+                }
+                
                 else{
                     alert("User allready Exist")
                 }      
@@ -61,14 +66,16 @@ const EmploySignup  = () => {
             <h1 >SignUp</h1><br />
             <Link className="EsignupLink" to='/EmploySignup' id="employsignupLink"><h1>Employe</h1></Link>
             <h1 className="signupLink" id='or'>or</h1>
-            <Link className="signupLink" to='/CompanySignup' onMouseLeave={(e)=>handleDown(e.target.id)} onMouseEnter={(e)=>handleMouse(e.target.id)} id="companySignupLink"><h1>Company</h1></Link><br /><br />
+            <Link className="signupLink" to='/CompanySignup' onMouseLeave={(e)=>handleDown(e.target.id)}
+             onMouseEnter={(e)=>handleMouse(e.target.id)} id="companySignupLink"><h1>Company</h1></Link><br /><br />
             <label >Name</label><br />
             <input type='text' placeholder='Enter Name' value={name} onChange={(e) => setName(e.target.value)} className='inputBox' />
+            <p className="helpLine">(Enter Full Name)</p><br></br>
             <label >Email</label><br />
             <input type='text' placeholder='Enter Email' value={email} onChange={(e) => setEmail(e.target.value)} className='inputBox' />
             <label >Contact no</label><br />
             <input type='number' placeholder='Contact Number' value={contactNumber} onChange={(e) => setnumber(e.target.value)} className='inputBox' />
-            <br />
+            <br /><br/>
             <label >Choose a work:</label><br/>
             <select value={workType} onChange={(e) => setType(e.target.value)} id="type of work" name="work">
                 <option value="Planner">Planner</option>
@@ -79,12 +86,18 @@ const EmploySignup  = () => {
                 <option value="Event Designer">Event Designer</option>
                 <option value="Light Technician">Light Technician</option>
                 <option value="Others">Other's</option>
-            </select><br /><br />
+            </select><br/>
+            <p className="helpLine">(In Case of Others  Please Enter the Work type you want) <h5>In case of more than one seperate it with "commas".</h5></p><br></br>
+
+            {workType==="Others" ?<div> <br/><input type="text" value={otherWorkType} className='inputBox'
+             onChange={(e) => setotherWorkType(e.target.value)}placeholder="Please Enter your Work preferences" /><br/></div>:<div><br/></div>}
             <label >Working status</label><br/>
             <select value={workStatus} onChange={(e) => setStatus(e.target.value)} id="type of work" name="work">
                 <option value="Fresher">Fresher</option>
                 <option value="Working">Working</option>
-            </select><br /><br />
+            </select><br />
+            <p className="helpLine">(Put Working Years 0 "in case of Fresher")</p><br />
+
             <label >No of years Working</label><br/>
             <select value={noOfYears} onChange={(e) => setYear(e.target.value)} id="type of work" name="work">
                 <option value="0">0 Year</option>
@@ -94,9 +107,13 @@ const EmploySignup  = () => {
                 <option value="4">4 years</option>
                 <option value="5">5 years</option>
                 <option value="more than 5">More than 5</option>
-            </select><br /><br />
+            
+            </select><br /><br /><br/><br></br>
+
             <label >Password</label><br />
             <input type='password' placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} className='inputBox' />
+            <p className="helpLine">(Passwords must contain at least eight characters, including at least 1 letter and 1 number.)</p><br></br>
+
             <button onClick={collectData} className='inputBox' type="button"> SignUp</button>
             <button   onClick={navigateTo} className='inputBox' type="button">SignIn</button>
         </div>

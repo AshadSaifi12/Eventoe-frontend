@@ -9,7 +9,7 @@ const Nav = () => {
     let handleMouse=(id)=>{
         const element=document.getElementById(id);
         
-        element.style.color="red";
+        element.style.color="cadetblue";
     }
     let handleDown=(id)=>{
         const element=document.getElementById(id);

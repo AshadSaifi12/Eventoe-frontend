@@ -66,9 +66,9 @@ const Csignin = () => {
             <input type='number' placeholder='CIN no.' value={cinNo} onChange={(e) => setCinNumber(e.target.value)} className='inputBox' />
             <br/><br></br>
             <label >Email</label><br />
-            <input type='text' placeholder='Enter Official Email' value={email} onChange={(e) => setEmail(e.target.value)} className='inputBox' />
+            <input type='email' placeholder='Enter Official Email' value={email} onChange={(e) => setEmail(e.target.value)} className='inputBox' />
             <label >Password</label><br />
-            <input type='text' placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} className='inputBox' /><br />
+            <input type='password' placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} className='inputBox' /><br />
             <button onClick={handleSignin} className='inputBox' type="button"> SignIn</button>
             <button  onClick={navigateTo} className='inputBox' type="button">SignUp</button>
 

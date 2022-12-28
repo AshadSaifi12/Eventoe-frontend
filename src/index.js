@@ -30,7 +30,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         <Route path="/profile" element={<h1>Profile Link is Working</h1>} />
         <Route path="/about" element={ <h1>About Link Working</h1>} />
         <Route path="/work" element={<h1>Work Link Working</h1>} />
-        <Route path="/logout" element={ <h1>Logout Link Working </h1>} />
+        
   
   
         <Route path="/signup" element={

@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  .nav-ul ul {
+    float: none;
+  }
+}
+  @media screen and (max-width: 600px) {
+    .nav-ul1 ul {
+      float: none;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .footer {
+      float: none;
+    }
+  }
 .nav-ul ul .item {
   display: block;
   font-size: x-large;
@@ -25,42 +40,47 @@
   margin-right: 31px
 }
 .nav-ul {
-  background-color:rgb(96,254,255);
+  background-color:tan;
   padding-top: 1px;
 }
 .nav-ul1 {
-  background-color:rgb(96,254,255);
+  background-color:tan;
   padding-top: 1px;
 }
 
 .nav-ul ul {
-  display: flex;
-  margin-top: 5vh;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  margin-left:10px;
 }
 .nav-ul1 ul {
-  display: flex;
-  margin-top: 5vh;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  margin-left:10px;
 }
 
-.nav-ul1 ul div a img {
-  width: 181px;
-  height: 140px;
+.nav-ul1 ul  img {
+  width: 100px;
+  height: 90px;
 
 }
 
 .inputBox {
   display: block;
-  width: 300px;
-  padding: 12px;
-  padding-top: 12px;
-  padding-right: 12px;
+  width: 21vw;
+  padding: 1vw;
+
   margin-top: 16px;
   border: ridge;
   border-radius: 18px;
   padding-top: 12px;
   margin-top: 12px;
-  margin-bottom: 18px;
-  padding-right: 203px;
+  margin-bottom: 3vh;
+  padding-right: 14vw;
 }
 
 .signUp {
@@ -68,22 +88,31 @@
 margin-left: 10vw;
 margin-right: 12vw;
 padding-left: 18%;
-font-size: xx-large;
+
 color: revert;
-background-color: lavender;
+background-color: tan;
 border-radius: 11px;
 padding-bottom: 25px;
 padding-top: 5vh;
 }
+.signUp  label{
 
+font-size: xx-large;
+
+}
+.CsignUp  label{
+
+  font-size: xx-large;
+  
+  }
 .CsignUp{
   margin-top: 5vh;
   margin-left: 10vw;
   margin-right: 12vw;
   padding-left: 18%;
-  font-size: xx-large;
+ 
   color: revert;
-  background-color: lavender;
+  background-color: tan;
   border-radius: 10px;
   padding-bottom: 25px;
   padding-top: 5vh;
@@ -112,16 +141,18 @@ padding-top: 5vh;
   padding-right: 4vh;
 }
 .signUp #or {
-  font-size: 80px;
+  font-size: 5vw;
 }
 .CsignUp #or {
-  font-size: 80px;
+  font-size: 5vw;
 }
 
-
+.helpLine{
+  
+}
 .signUp .signupLink {
   display: table-cell;
-  font-size: 19px;
+  font-size: 1vw;
   padding-inline-end: 2vh;
   background-color: antiquewhite;
   text-decoration: none;
@@ -131,13 +162,20 @@ padding-top: 5vh;
   padding-left: 4vh;
   padding-right: 4vh;
 }
-
+.initial-link a:hover {
+  background-color: white;
+  color: cadetblue;
+}
+.signUp a:hover {
+  background-color: white;
+  color: cadetblue;
+}
 .signUp select{
   background-color: cadetblue;
   color: white;
   border-radius: 21px;
-  padding-right: 22vh;
-  padding-left: 23vh;
+  padding-right: 13vw;
+  padding-left: 16vw;
 }
 .signUp button{
   font-size: x-large;
@@ -151,12 +189,12 @@ padding-right: 24px;
   background-color: cadetblue;
 color: white;
 border-radius: 21px;
-padding-right: 22vh;
-padding-left: 23vh;
+padding-right: 13vw;
+padding-left: 16vw;
 }
 .signUp .EsignupLink {
   display: table-cell;
-  font-size: 19px;
+  font-size: 1vw;
   padding-inline-end: 2vh;
   text-decoration: none;
   color: cadetblue;
@@ -174,7 +212,7 @@ padding-left: 23vh;
   position: relative;
   font-size: xxx-large;
   width: 100%;
-  background-color: rgb(96,254,255);;
+  background-color: tan;;
 }
 
 @media (prefers-reduced-motion: no-preference) {
